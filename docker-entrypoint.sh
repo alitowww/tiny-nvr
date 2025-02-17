@@ -75,5 +75,6 @@ fi
 
 echo "Saving stream in \"$dirName\""
 
-# start recording with ffmpeg
-ffmpeg -rtsp_transport tcp -y -i "$streamURL" -c copy -f segment -segment_time "$VIDEO_SEGMENT_TIME" -segment_atclocktime 1 -strftime 1 "$dir"/%Y-%m-%d_%H-%M-%S."$fileExtension" -loglevel debug
+# start recording with ffmpeg    "$VIDEO_SEGMENT_TIME"
+ffmpeg -rtsp_transport tcp -y -i "$streamURL" -c copy -f segment -segment_time 300 -segment_atclocktime 1 -strftime 1 "$dir"/%Y-%m-%d_%H-%M-%S."$fileExtension" -loglevel debug
+
